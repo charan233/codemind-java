@@ -1,36 +1,34 @@
-import java.util.Scanner;
-class PerfectNumberExample2  
-{  
-  
-static long isPerfect(long num)  
-{  
-  
-long sum=0;  
- 
-for(int i=1; i <= num/2; i++)  
-{  
-if(num % i == 0)  
-{  
+import java.util.*;
+class factcount
+{
+ public static int findFactor(int x)
+ {
+  int c=0;
+  for(int i=1;i<=x/2;i++)
+	{
+	 if(x%i==0)
+		{
+		  c+=i;
+		}
+	}
+	return(c);
+ }
+ public static void main(String args[])
+ {
+ 	Scanner sc=new Scanner(System.in);
+ 	int n,res;
+    n=sc.nextInt();
+	res=findFactor(n);
+	if (n==res)
+	{
+	    System.out.println("True");
+	}
+	else
+	{
+	    System.out.println("False");
+	}
+   
+    
+ }
 
-sum=sum + i;  
-} 
-}  
- 
-return sum;   
-} 
-public static void main(String args[])    
-{  
-long number, s;  
-Scanner sc=new Scanner(System.in);         
-
- 
-number=sc.nextLong();  
-
-s = isPerfect(number);  
-  
-if(s==number)  
-System.out.println("True");  
-else  
-System.out.println("False");   
-}   
-}  
+}
